@@ -11,9 +11,9 @@ const Signup = require("../models/signup");
 const { token } = require("morgan");
 
 require("dotenv").config({ path: "../../.env" });
-const JWT_SECRET = process.env.JWT_SECRET;
-const JWT_EXPIRES = process.env.JWT_EXPIRES;
-const NODE_ENV = process.env.NODE_ENV;
+const JWT_SECRET="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdiNTM0Yzk4ODY3YzFlZmMwODBhNDkiLCJyb2xlIjoidXNlciIsImlhdCI6MTY2OTAzODI1NSwiZXhwIjoxNjY5MDQxODU1fQ.L009Kkq2Ru1qAjiibtXu9ZRo6v3KkC95aMWHKdsBfYo"
+const JWT_EXPIRES = "1d";
+const NODE_ENV = "production";
 
 const signJwt = (id) => {
   return jwt.sign({ id }, JWT_SECRET, {
@@ -119,7 +119,7 @@ function checkPassword(req, res, next) {
   }
 }
 
-router.get("/", (req, res) => res.send("This is Home page !!"));
+router.get("/", (req, res) => res.send("This is Home page !!")) ;
 
 router.post(
   "/signup",
@@ -173,7 +173,7 @@ router.post("/login", checkFieldLogin, (req, res, next) => {
         //sendToken(checkUser,201,req,res)
         const jwt_token = jwt.sign(
           { _id: data._id, role: "user" },
-          process.env.JWT_SECRET,
+          JWT_SECRET,
           { expiresIn: "1hr" }
         );
         console.log("after loggin" + jwt_token);
