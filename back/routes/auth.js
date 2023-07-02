@@ -10,7 +10,7 @@ const { promisify } = require("util");
 const Signup = require("../models/signup");
 const { token } = require("morgan");
 
-require("dotenv").config({ path: "../../.env" });
+// require("dotenv").config({ path: "../../.env" });
 const JWT_SECRET="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdiNTM0Yzk4ODY3YzFlZmMwODBhNDkiLCJyb2xlIjoidXNlciIsImlhdCI6MTY2OTAzODI1NSwiZXhwIjoxNjY5MDQxODU1fQ.L009Kkq2Ru1qAjiibtXu9ZRo6v3KkC95aMWHKdsBfYo"
 const JWT_EXPIRES = "1d";
 const NODE_ENV = "production";
