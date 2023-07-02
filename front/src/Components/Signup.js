@@ -26,7 +26,7 @@ export default class Signup extends Component {
     };
     
     axios({
-      url: "http://localhost:5000/signup",
+      url: "https://lost-and-found-back2.onrender.com/signup",
       method: "POST",
       data: payload,
     })
