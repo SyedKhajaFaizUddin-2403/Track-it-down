@@ -1,6 +1,6 @@
 const { postitem } = require("../models/category");
 const messageschema = require("../models/messages");
-require("dotenv").config({ path: "../../.env" });
+// require("dotenv").config({ path: "../../.env" });
 // const { requestitem } = require("../models/category");
 const { requireSignin, userMiddleware } = require("../middleware");
 const express = require("express");
